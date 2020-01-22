@@ -64,23 +64,17 @@ class Bob {
     await this.clearAllSpaces();
     await this.getLastCharacter();
 
-    if (await this.sayAnything()) {
-      return ANSWERS.sayingAnything;
-    }
+    if (await this.sayAnything()) return ANSWERS.sayingAnything;
 
     await this.getOnlyAlphabets();
 
     await this.checkAlphabetState();
 
-    if (await this.askQuestion()) {
-      return ANSWERS.askQuestion;
-    }
-    if (await this.yellAtHim()) {
-      return ANSWERS.yellAtHim;
-    }
-    if (await this.yellAndQuestion()) {
-      return ANSWERS.yellAndQuestion;
-    }
+    if (await this.askQuestion()) return ANSWERS.askQuestion;
+
+    if (await this.yellAtHim()) return ANSWERS.yellAtHim;
+
+    if (await this.yellAndQuestion()) return ANSWERS.yellAndQuestion;
 
     return ANSWERS.default;
   }
