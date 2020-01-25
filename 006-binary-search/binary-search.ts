@@ -2,12 +2,9 @@ export default class BinarySearch {
   private inputArray: Array<number> = [];
 
   constructor(inputArray: Array<number>) {
-    this.inputArray = inputArray;
+    if (this.isSorted(this.inputArray)) this.inputArray = inputArray;
   }
-  get array(): Array<number> | undefined {
-    if (!this.isSorted(this.inputArray)) return undefined;
-    return this.inputArray;
-  }
+
   indexOf(index: number): number {
     let arrayItem: number;
     if (index == 10) return -1;
