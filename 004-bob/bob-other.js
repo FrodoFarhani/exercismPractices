@@ -1,13 +1,13 @@
 import * as R from 'ramda';
 
 const isQuestion = R.endsWith('?');
-const isAllUpper = (s: string) => s === s.toUpperCase();
-const containsLetters = (s: string) => !!s.match(/[a-z]/i);
+const isAllUpper = (s) => s === s.toUpperCase();
+const containsLetters = (s) => !!s.match(/[a-z]/i);
 const isWhitespaceOrEmpty = R.pipe(R.trim, R.isEmpty);
 const isShouting = R.both(containsLetters, isAllUpper);
 
 class Bob {
-  hey(input: string) {
+  hey(input) {
     return R.cond([
       [isShouting, R.always('Whoa, chill out!')],
       [isQuestion, R.always('Sure.')],
