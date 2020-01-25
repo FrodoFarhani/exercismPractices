@@ -1,5 +1,5 @@
 export default class BinarySearch {
-  array: number[];
+  array: number[] = [];
 
   constructor(input: number[]) {
     if (this.isSorted(input)) {

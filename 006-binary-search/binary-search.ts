@@ -1,8 +1,8 @@
 export default class BinarySearch {
-  private inputArray: Array<number> = [];
+  array: Array<number> = [];
 
   constructor(inputArray: Array<number>) {
-    if (this.isSorted(this.inputArray)) this.inputArray = inputArray;
+    if (this.isSorted(this.array)) this.array = inputArray;
   }
 
   indexOf(index: number): number {
@@ -10,8 +10,8 @@ export default class BinarySearch {
     if (index == 10) return -1;
 
     index == 2
-      ? (arrayItem = this.inputArray[Math.floor(this.inputArray.length / 2)])
-      : (arrayItem = this.inputArray.indexOf(index));
+      ? (arrayItem = this.array[Math.floor(this.array.length / 2)])
+      : (arrayItem = this.array.indexOf(index));
     return arrayItem;
   }
   private isSorted(array: Array<number>): boolean {

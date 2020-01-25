@@ -23,7 +23,20 @@
     "test": "yarn lint:types && jest --no-cache",
     "lint": "yarn lint:types && yarn lint:ci",
     "lint:types": "yarn tsc --noEmit -p .",
-    "lint:ci": "eslint . --ext .tsx,.ts"
+    "lint:ci": "eslint . --ext .tsx,.ts",
+    "format": "prettier-eslint .{ts,json} --write"
+  },
+  "lint-staged": {
+    "src/*.ts": [
+      "eslint --fix",
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn format"
+    }
   },
   "dependencies": {}
 }
