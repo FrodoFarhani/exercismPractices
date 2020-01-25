@@ -7,12 +7,12 @@
     "test": "yarn lint:types && jest --no-cache",
     "lint": "yarn lint:types && yarn lint:ci",
     "lint:types": "yarn tsc --noEmit -p .",
-    "lint:ci": "eslint . --ext /*.ts",
-    "format": "prettier-eslint /*.{ts,json} --write",
+    "lint:ci": "eslint . --ext */*.ts",
+    "format": "prettier-eslint */*.{ts,json} --write",
     "start":"tsc binary-search.ts"
   },
   "lint-staged": {
-    "/*.ts": [
+    "*/*.ts": [
       "eslint --fix",
       "prettier-eslint --write",
       "git add"
