@@ -11,7 +11,18 @@
     "format": "prettier-eslint **/*.{ts,json} --write",
     "start":"tsc binary-search.ts"
   },
- 
+  "lint-staged": {
+    "**/*.ts": [
+      "eslint --fix",
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/so0oshiance/exercismPractices.git"
