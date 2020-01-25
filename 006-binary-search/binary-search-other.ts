@@ -20,10 +20,10 @@ export default class BinarySearch {
   }
 
   indexOf(target: number): number {
-    let left: number = 0;
+    let left = 0;
     let right: number = this.array.length - 1;
     while (left < right) {
-      let mid: number = left + Math.floor((right - left) / 2);
+      const mid: number = left + Math.floor((right - left) / 2);
       if (this.array[mid] === target) {
         return mid;
       } else if (this.array[mid] < target) {
