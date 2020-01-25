@@ -1,3 +1,8 @@
+# clean-code-typescript
+ Clean Code concepts adapted for TypeScript.
+ Please checkout [https://github.com/labs42io/clean-code-typescript]clean-code-typescript.
+    Inspired from [https://github.com/ryanmcdermott/clean-code-javascript]clean-code-javascript.
+    
 ## Setup Eslint with Airbnb Style Guide
     Eslint is a linting utility for JavaScript and JSX, with some nice rules and plugins. Anyone can write rules for Eslint. An example rule could be “avoid using console.log()“
 
