@@ -1,4 +1,3 @@
-import { promises } from 'dns';
 
 enum ANSWERS {
   sayingAnything = 'Fine. Be that way!',

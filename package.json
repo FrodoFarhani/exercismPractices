@@ -7,21 +7,11 @@
     "test": "yarn lint:types && jest --no-cache",
     "lint": "yarn lint:types && yarn lint:ci",
     "lint:types": "yarn tsc --noEmit -p .",
-    "lint:ci": "eslint . --ext **/*.tsx,.ts",
-    "format": "prettier-eslint **/*.{ts,json} --write"
+    "lint:ci": "eslint . --ext **/*.ts",
+    "format": "prettier-eslint **/*.{ts,json} --write",
+    "start":"tsc binary-search.ts"
   },
-  "lint-staged": {
-    "**/*.ts": [
-      "eslint --fix",
-      "prettier-eslint --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint && yarn format"
-    }
-  },
+ 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/so0oshiance/exercismPractices.git"
@@ -40,5 +30,8 @@
     "husky": "^4.2.1",
     "lint-staged": "^10.0.2",
     "prettier-eslint-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.17.0"
   }
 }
