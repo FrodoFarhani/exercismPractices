@@ -1,5 +1,3 @@
-import { isNumber, isArray } from "util";
-
 enum OPERATIONS {
   PLUS = "plus",
   MINUS = "minus",

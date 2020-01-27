@@ -1,8 +1,5 @@
 node_modules
-.eslintrc
 .exercism
 babel.config.js
 .eslintignore
-*.test.ts
-jest.config.js
-tsconfig.json
+
