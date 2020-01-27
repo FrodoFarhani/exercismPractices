@@ -26,11 +26,12 @@ export class WordProblem {
   }
   answer(): number {
     if (this.isArgumentError()) throw new ArgumentError("Error");
-
     this.result = this.numbers[0];
-    for (let i = 0; i < this.operands.length; i++) {
-      this.result = this.calulation(this.operands[i], this.numbers[i + 1]);
-    }
+
+    this.operands.forEach((operand: string, i: number) => {
+      this.result = this.calulation(operand, this.numbers[i + 1]);
+    });
+
     return this.result;
   }
   private isArgumentError(): boolean {
@@ -71,23 +72,17 @@ export class WordProblem {
   }
   private calulation(operand: string, number: number): number {
     let result = 0;
-    switch (operand) {
-      case OPERATIONS.PLUS:
-        result = this.result + number;
-        break;
-      case OPERATIONS.MINUS:
-        result = this.result - number;
-        break;
-      case OPERATIONS.MULTYPLY:
-        result = this.result * number;
-        break;
-      case OPERATIONS.DIVIDE:
-        result = this.result / number;
-        break;
-      case OPERATIONS.POWER:
-        result = Math.pow(this.result, number);
-        break;
-    }
+    OPERATIONS.PLUS == operand
+      ? (result = this.result + number)
+      : OPERATIONS.MINUS == operand
+      ? (result = this.result - number)
+      : OPERATIONS.MULTYPLY == operand
+      ? (result = this.result * number)
+      : OPERATIONS.DIVIDE == operand
+      ? (result = this.result / number)
+      : OPERATIONS.POWER == operand
+      ? (result = Math.pow(this.result, number))
+      : result;
     return result;
   }
   private removeLastChar(question: string): string {
