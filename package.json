@@ -9,7 +9,7 @@
     "lint:types": "yarn tsc --noEmit -p .",
     "lint:ci": "eslint ./**/*.ts --ignore-pattern node_modules/",
     "format": "prettier-eslint ./*.{ts,json} --write",
-    "start":"tsc binary-search.ts"
+    "start": "tsc binary-search.ts"
   },
   "lint-staged": {
     "./**/*.ts": [
@@ -38,7 +38,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-promise": "^4.2.1",
-    "husky": "^4.2.1",
+    "husky": "^4.2.3",
     "lint-staged": "^10.0.2",
     "prettier-eslint-cli": "^5.0.0"
   },
