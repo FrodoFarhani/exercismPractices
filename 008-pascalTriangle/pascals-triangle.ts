@@ -23,15 +23,13 @@ export default class Triangle {
     return result;
   }
 
-  private calcOneRow(lastRow: number[]) {
+  private calcOneRow(lastRow: number[]): number[] {
     let row: number[] = [];
     let prevItem = 0;
 
     row = lastRow.map(item => {
       const sum = prevItem + item;
-      1;
       prevItem = item;
-      1;
       return sum;
     });
     row.push(1);
